@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Dilini Ranaweera — Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My personal site, rebuilt from scratch on a modern React stack and deployed to GitHub Pages.
 
-## Available Scripts
+**Live:** https://dilini-ranaweera.github.io
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- **React 18** — component model
+- **Vite 5** — dev server + production build (replaces Create React App)
+- **Framer Motion** — scroll reveals and micro-interactions (replaces the abandoned `react-reveal`)
+- **Lucide React** — icon set (replaces Material UI icons)
+- **Modern CSS** — custom properties, fluid `clamp()` typography, a real mobile breakpoint, respects `prefers-reduced-motion`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Local development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+npm run dev        # starts a Vite dev server at http://localhost:5173
+npm run build      # production build to ./dist
+npm run preview    # preview the production build locally
+```
 
-### `npm test`
+## Project structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+.
+├── index.html                       # Vite entry point
+├── public/                          # static assets served at the site root
+│   ├── me.jpg, meme.jpg, favicon.ico, ...
+│   └── images/                      # work-experience images
+├── src/
+│   ├── main.jsx                     # React entry
+│   ├── App.jsx
+│   ├── styles.css                   # all styles (design tokens + components + responsive)
+│   ├── data.js                      # experiences + projects content (edit me to update the site)
+│   └── components/
+│       ├── Navbar.jsx               # sticky nav + mobile drawer
+│       ├── Hero.jsx                 # gradient hero w/ staggered reveal
+│       ├── About.jsx
+│       ├── Experience.jsx           # 3-column grid on desktop, 1-col on mobile
+│       ├── Projects.jsx             # alternating image/text
+│       ├── Footer.jsx
+│       └── Reveal.jsx               # small Framer Motion wrapper
+├── .github/workflows/deploy.yml     # GitHub Pages deploy via GitHub Actions
+├── vite.config.js
+└── package.json
+```
 
-### `npm run build`
+## Editing content
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+All the "what's on the page" content lives in **`src/data.js`** — work experiences and personal projects. Intro and About copy lives in `src/components/Hero.jsx` and `src/components/About.jsx`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This repo ships with a GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
 
-### `npm run eject`
+1. Installs deps with `npm ci`
+2. Builds the site with `npm run build`
+3. Uploads `dist/` as a Pages artifact
+4. Deploys it to GitHub Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+For this to work you need to:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Push to `main`. The Actions tab will show the deploy running; once green, the site is live.

@@ -1,92 +1,115 @@
-import React, { useState, useEffect } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Hammer, FlaskConical, FileText, Linkedin, Github, Menu, X } from 'lucide-react'
 
-import HardwareIcon from "@mui/icons-material/Hardware";
-import ScienceIcon from "@mui/icons-material/Science";
-import ArticleIcon from "@mui/icons-material/Article";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Link } from "react-scroll";
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    flexGrow: 1, // Expand to fill available space
+const NAV_ITEMS = [
+  { href: '#experience', label: 'Work', icon: Hammer },
+  { href: '#projects', label: 'Projects', icon: FlaskConical },
+  {
+    href: 'https://www.linkedin.com/in/dilini-ranaweera-295418220/',
+    label: 'LinkedIn',
+    icon: Linkedin,
+    external: true,
   },
-  toolbar: {
-    display: "flex",
-    justifyContent: "space-between", // Align items with equal spacing between them
+  {
+    href: 'https://github.com/dilini-ranaweera',
+    label: 'GitHub',
+    icon: Github,
+    external: true,
   },
-}));
+]
 
-function NavBar() {
-  const classes = useStyles();
-  const [isComponentAboveVisible, setIsComponentAboveVisible] = useState(true);
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
-  // useEffect(() => {
-  //   // Function to check if the component above the navbar is still visible
-  //   const checkComponentAboveVisibility = () => {
-  //     const componentAbove = document.getElementById("about-me");
-  //     if (componentAbove) {
-  //       const { bottom } = componentAbove.getBoundingClientRect();
-  //       setIsComponentAboveVisible(bottom > 0);
-  //     }
-  //   };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-  //   // Attach the event listener to check visibility on scroll
-  //   window.addEventListener("scroll", checkComponentAboveVisibility);
+  // Close the drawer if the viewport grows past the mobile breakpoint
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 640) setOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
 
-  //   // Remove the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", checkComponentAboveVisibility);
-  //   };
-  // }, []);
+  // Lock scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
+  const handleLinkClick = () => setOpen(false)
 
   return (
-    <div className="navigation-bar-wrapper">
-      <div className={`navbar ${isComponentAboveVisible ? "" : "sticky"}`}>
-        <AppBar position="static" color="#ffffff" className={classes.appBar}>
-          <Toolbar className={classes.toolbar}>
-            <Link to="work-experiences-title" smooth duration={1000}>
-              <Button color="inherit" startIcon={<HardwareIcon />}>
-                {" "}
-                Work Experiences{" "}
-              </Button>
-            </Link>
-            <Link to="personal-project-title" smooth duration={1000}>
-              <Button color="inherit" startIcon={<ScienceIcon />}>
-                {" "}
-                Personal Projects
-              </Button>
-            </Link>
-            <Button color="inherit" startIcon={<ArticleIcon />}>
-              Resume
-            </Button>
-            <a
-              href="https://www.linkedin.com/in/dilini-ranaweera-295418220/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button color="black" startIcon={<LinkedInIcon />}>
-                LinkedIn
-              </Button>
-            </a>
-            <a
-              href="https://github.com/dilini-ranaweera"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button color="black" startIcon={<GitHubIcon />}>
-                GitHub
-              </Button>
-            </a>
-          </Toolbar>
-        </AppBar>
-      </div>
-    </div>
-  );
-}
+    <>
+      <nav className={`nav ${scrolled ? 'scrolled' : ''}`} aria-label="Primary">
+        <div className="container nav-inner">
+          <a href="#top" className="nav-brand" aria-label="Dilini Ranaweera — home">
+            Dilini Ranaweera
+          </a>
 
-export default NavBar;
+          <div className="nav-links">
+            {NAV_ITEMS.map(({ href, label, icon: Icon, external }) => (
+              <a
+                key={label}
+                href={href}
+                className="nav-link"
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+              >
+                <Icon size={16} strokeWidth={2} aria-hidden />
+                <span>{label}</span>
+              </a>
+            ))}
+          </div>
+
+          <button
+            className="nav-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="nav-drawer"
+            role="menu"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+          >
+            {NAV_ITEMS.map(({ href, label, icon: Icon, external }) => (
+              <a
+                key={label}
+                href={href}
+                role="menuitem"
+                className="nav-link"
+                onClick={handleLinkClick}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noopener noreferrer' : undefined}
+              >
+                <Icon size={18} strokeWidth={2} aria-hidden />
+                <span>{label}</span>
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
