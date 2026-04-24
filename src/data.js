@@ -7,7 +7,7 @@ export const experiences = [
       'Supporting C++ (and Rust) devs at Amazon :)',
     image: '/images/discreteMath.jpg',
     link: 'https://rust-lang.org/',
-    tags: ['Teaching', 'Discrete Math'],
+    tags: ['Rust', 'Bazel', 'C++'],
   },
   {
     title: 'Software Development Engineer',
@@ -17,17 +17,17 @@ export const experiences = [
       'SDE in the Robotic Movement org. Worked on distributed simulation software, implementing novel hardware simulations and troubleshooting visibility dashboards. Learned lots of cool things about robotics and coordination at scale, but ultimately left to a language team on AWS because thats where my passion was :D',
     image: '/images/discreteMath.jpg',
     link: 'https://www.aboutamazon.com/news/tag/robotics',
-    tags: ['Teaching', 'Discrete Math'],
+    tags: ['Java', 'TypeScript'],
   },
   {
     title: 'Data Analytics and Engineering Intern',
     org: 'The Vanguard Group',
     period: 'June 2024 – August 2024',
     description:
-      'Data Analytics intern at Vanguard under the Chief Data Analytics Office. Built an internal portfolio metrics dashboard using python, tableau, and DuckDB.',
+      'Data Analytics intern at Vanguard under the Chief Data Analytics Office. Built an internal portfolio metrics dashboard used by analysts to recommend funds to clients.',
     image: '/images/discreteMath.jpg',
     link: 'https://investor.vanguard.com/?cmpgn=BR:PS:XX:BR:20250128:GG:CROSS:LB~Brand_VN~GG_KC~BD_PR~EVGRN_UN~Core_MT~Exact_AT~None_EX~None:NONE:NONE:NONE:KW:NavVanguardGroup&gclsrc=aw.ds&gad_source=1&gad_campaignid=8556346934&gbraid=0AAAAADyd_RXmuVz24WCcG9ut2xPznkM-5&gclid=CjwKCAjwqazPBhALEiwAOuXqdLUFmdpWBs3gHkVLMDhIKgwRw1rvU5kBQst1IqtkLC7F_3Ax3PV-kxoCRyUQAvD_BwE',
-    tags: ['Teaching', 'Discrete Math'],
+    tags: ['Python', 'Tableau'],
   },
   {
     title: 'CIS 1600 Teaching Assistant',
