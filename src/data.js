@@ -50,24 +50,13 @@ export const experiences = [
     tags: ['React', 'REST API', 'CI/CD'],
   },
   {
-    title: 'Machine Learning Intern',
-    org: 'Center for Neuroimaging and Therapeutics',
-    period: 'June 2022 - August 2022',
-    description:
-      'PURM-funded biomedical research. Trained a Convolutional Neural Network to detect Multiple Sclerosis lesions in low-field MRI scans.',
-    image: '/images/cnt.png',
-    link: 'http://cnt.upenn.edu/',
-    tags: ['ML', 'CNN', 'Medical Imaging'],
-  },
-  {
-    title: 'Research Assistant',
-    org: 'LSPFI, Perelman School of Medicine',
+    title: 'Undergraduate Researcher',
+    org: 'University of Pennsylvania, Perelman School of Medicine',
     period: 'May 2021 – May 2023',
     description:
-      'Two years at the Laboratory for Structural, Physiologic, and Functional Imaging. Built compressive-sensing algorithms to reduce high-field MRI scan time and manually segmented MR images from both high- and low-field scanners.',
-    image: '/images/Perelman-School-Medicine.png',
+      'Two years of biomedical imaging research across the Laboratory for Structural, Physiologic, and Functional Imaging (LSPFI) and the Center for Neuroimaging and Therapeutics. Built compressive-sensing algorithms to reduce high-field MRI scan time, manually segmented MR images from high- and low-field scanners, and trained a CNN to detect Multiple Sclerosis lesions in low-field MRI scans (PURM-funded).',
     link: 'https://www.med.upenn.edu/lspfi/',
-    tags: ['Research', 'MRI', 'Algorithms'],
+    tags: ['Research', 'MRI', 'ML', 'CNN', 'Medical Imaging', 'Algorithms'],
   }
 ]
 
