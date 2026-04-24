@@ -1,8 +1,38 @@
 export const experiences = [
   {
+    title: 'Software Development Engineer',
+    org: 'Amazon Web Services (AWS)',
+    period: '2023 – Present',
+    description:
+      'Supporting C++ (and Rust) devs at Amazon :)',
+    image: '/images/discreteMath.jpg',
+    link: 'https://rust-lang.org/',
+    tags: ['Teaching', 'Discrete Math'],
+  },
+  {
+    title: 'Software Development Engineer',
+    org: 'Amazon Robotics',
+    period: 'June 2025 – March 2026',
+    description:
+      'SDE in the Robotic Movement org. Worked on distributed simulation software, implementing novel hardware simulations and troubleshooting visibility dashboards. Learned lots of cool things about robotics and coordination at scale, but ultimately left to a language team on AWS because thats where my passion was :D',
+    image: '/images/discreteMath.jpg',
+    link: 'https://www.aboutamazon.com/news/tag/robotics',
+    tags: ['Teaching', 'Discrete Math'],
+  },
+  {
+    title: 'Data Analytics and Engineering Intern',
+    org: 'The Vanguard Group',
+    period: 'June 2024 – August 2024',
+    description:
+      'Data Analytics intern at Vanguard under the Chief Data Analytics Office. Built an internal portfolio metrics dashboard using python, tableau, and DuckDB.',
+    image: '/images/discreteMath.jpg',
+    link: 'https://investor.vanguard.com/?cmpgn=BR:PS:XX:BR:20250128:GG:CROSS:LB~Brand_VN~GG_KC~BD_PR~EVGRN_UN~Core_MT~Exact_AT~None_EX~None:NONE:NONE:NONE:KW:NavVanguardGroup&gclsrc=aw.ds&gad_source=1&gad_campaignid=8556346934&gbraid=0AAAAADyd_RXmuVz24WCcG9ut2xPznkM-5&gclid=CjwKCAjwqazPBhALEiwAOuXqdLUFmdpWBs3gHkVLMDhIKgwRw1rvU5kBQst1IqtkLC7F_3Ax3PV-kxoCRyUQAvD_BwE',
+    tags: ['Teaching', 'Discrete Math'],
+  },
+  {
     title: 'CIS 1600 Teaching Assistant',
     org: 'University of Pennsylvania',
-    period: '2023 – Present',
+    period: 'August 2022 – May 2025',
     description:
       'Teaching assistant for Mathematical Foundations of Computer Science. I write homework problems and solutions, run weekly office hours, and lead recitations for 15+ students. I also help write and grade exams.',
     image: '/images/discreteMath.jpg',
@@ -12,7 +42,7 @@ export const experiences = [
   {
     title: 'Web Development Intern',
     org: 'SageFrog Marketing Group',
-    period: 'Summer 2023',
+    period: 'June 2023 – August 2023',
     description:
       'Built websites in HTML, CSS, JavaScript, and PHP, and shipped React.js sites integrated with the company CMS through an internal REST API. Implemented source control and deployment pipelines for most of the agency’s client sites.',
     image: '/images/SageFrog.jpg',
@@ -22,7 +52,7 @@ export const experiences = [
   {
     title: 'Machine Learning Intern',
     org: 'Center for Neuroimaging and Therapeutics',
-    period: 'Summer 2022',
+    period: 'June 2022 - August 2022',
     description:
       'PURM-funded biomedical research. Trained a Convolutional Neural Network to detect Multiple Sclerosis lesions in low-field MRI scans.',
     image: '/images/cnt.png',
@@ -38,27 +68,7 @@ export const experiences = [
     image: '/images/Perelman-School-Medicine.png',
     link: 'https://www.med.upenn.edu/lspfi/',
     tags: ['Research', 'MRI', 'Algorithms'],
-  },
-  {
-    title: 'Data Science Intern',
-    org: 'The World Bank',
-    period: 'Summer 2019',
-    description:
-      'Built a K-Means clustering model predicting productivity of Peruvian hospitals from a World Bank dataset. Presented findings to Peruvian government officials.',
-    image: '/images/workBank.jpg',
-    link: 'https://www.worldbank.org/en/home',
-    tags: ['K-Means', 'Analysis'],
-  },
-  {
-    title: 'Investment & Derivatives Cohort',
-    org: 'Ivyline Capital',
-    period: '2022',
-    description:
-      'Coursework in microeconomics, macroeconomics, and derivatives — broadening the technical work with a finance lens.',
-    image: '/images/ivyline.jpg',
-    link: 'https://www.ivylinecapital.com/investment-and-derivative-program',
-    tags: ['Finance', 'Derivatives'],
-  },
+  }
 ]
 
 export const projects = [
