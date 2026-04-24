@@ -17,14 +17,6 @@ export default function Experience() {
         <div className="xp-grid">
           {experiences.map((xp, i) => (
             <Reveal key={xp.title} delay={i * 0.06} className="xp-card">
-              <a
-                className="xp-media"
-                href={xp.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Visit ${xp.org}`}
-              >
-              </a>
               <div className="xp-body">
                 <div className="xp-meta">
                   <span>{xp.org}</span>
