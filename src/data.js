@@ -2,7 +2,7 @@ export const experiences = [
   {
     title: 'Software Development Engineer',
     org: 'Amazon Web Services (AWS)',
-    period: '2023 – Present',
+    period: 'March 2026 – Present',
     description:
       'Supporting C++ (and Rust) devs at Amazon :)',
     image: '/images/discreteMath.jpg',
