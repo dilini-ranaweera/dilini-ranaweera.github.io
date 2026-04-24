@@ -24,17 +24,16 @@ export default function Hero() {
       >
         <motion.span variants={itemV} className="hero-eyebrow">
           <span className="pulse" aria-hidden />
-          Available for Summer 2026 SWE roles
+          Welcome to my personal website :D
         </motion.span>
 
         <motion.h1 variants={itemV} className="hero-title">
-          Hi, I'm Dilini — <span className="accent">CS at Penn</span>, building a little bit of everything.
+          Hi, I'm Dilini — <span className="accent">SWE at AWS, </span><span className="accent">CS at Penn</span>, building a little bit of everything.
         </motion.h1>
 
         <motion.p variants={itemV} className="hero-sub">
-          Junior at the University of Pennsylvania studying Computer Science, with minors in Math and Stats.
-          I teach discrete math, build web apps and ML models, and care a lot about making software feel
-          thoughtful. Thanks for clicking on my website.
+          I currently work on the C++ (and Rust) platform team at AWS. I've also worked in robotics,
+          taught discrete math, built web apps and ML models. I care a lot about making software thoughtful and accessible.
         </motion.p>
 
         <motion.div variants={itemV} className="hero-actions">

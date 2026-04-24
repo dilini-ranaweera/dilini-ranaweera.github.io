@@ -29,25 +29,19 @@ export default function About() {
 
           <Reveal delay={0.2} className="about-text">
             <p>
-              I'm a <strong>third-year student at the University of Pennsylvania</strong>, and an
-              alumna of Seneca Valley Senior High School. I'm studying Computer Science with minors
-              in Mathematics and Statistics. I love almost every corner of CS — from front-end web
-              development to machine learning to Web3 — and my goal is to learn as much of it as I can.
+              I'm a <strong>recent grad of the University of Pennsylvania</strong>, and an
+              alumna of Seneca Valley Senior High School. I studied Computer Science, with a focus on computer systems. 
+              My favorite thing to learn about is compilers.
             </p>
             <p>
-              Alongside CS I care deeply about mathematics and math education. That love led me to
-              become a <strong>Teaching Assistant for CIS 1600 (Mathematical Foundations of CS)</strong>{' '}
-              and to join the executive board of Penn's Bridge to Mathematics club.
+              I care deeply about mathematics and math education. That love led me to
+              become a <strong>Teaching Assistant for CIS 1600 (Mathematical Foundations of CS)</strong>{' '}, 
+              eventually becoming a <strong>Head Teaching Assistant</strong> for the 2024-2025 school year.
             </p>
             <p>
-              When I'm off the clock I play chess, read fashion-history essays, and watch cartoons.
+              Outisde of work, I read fashion-history essays, watch cartoons, occassionally play chess, and hike.
               My favorite opening is the Caro-Kann, my favorite era of fashion is the '90s, and my
-              favorite show is BoJack Horseman.
-            </p>
-            <p>
-              After Penn I plan to work as a <strong>Software Development Engineer</strong>. I'm
-              especially drawn to cloud computing and would love to join a team building developer
-              tools for the cloud.
+              favorite show is Arcane (though BoJack Horseman is a close second).
             </p>
 
             <div className="about-chips" aria-label="Interests and focus areas">
