@@ -24,7 +24,6 @@ export default function Experience() {
                 rel="noopener noreferrer"
                 aria-label={`Visit ${xp.org}`}
               >
-                <img src={xp.image} alt="" loading="lazy" />
               </a>
               <div className="xp-body">
                 <div className="xp-meta">
